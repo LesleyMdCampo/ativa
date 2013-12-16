@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'devise'
 
+gem 'html2haml'
+
 # Use HAML
 gem 'haml-rails'
 gem 'haml'
