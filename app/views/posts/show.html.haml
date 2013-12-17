@@ -5,7 +5,7 @@
 
 = link_to 'Back', project_path(@project, phase_id: @phase), class: [:small, :button]
 %p= @post.message
-- if @post.attachment == ""
+- if %img{src: @post.attachment_url} == ""
   no attachment available
 -else
   %iframe{height: "800", width:"100%", frameBorder: "0", src: @post.attachment}
