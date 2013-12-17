@@ -4,6 +4,8 @@ gem 'devise'
 
 gem 'carrierwave'
 
+gem 'rmagick'
+
 # Use HAML
 gem 'haml-rails'
 gem 'haml'
