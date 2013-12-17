@@ -8,6 +8,8 @@ gem 'rmagick'
 
 gem 'figaro'
 
+# gem 'fog'
+
 # Use HAML
 gem 'haml-rails'
 gem 'haml'
