@@ -6,6 +6,8 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+gem 'figaro'
+
 # Use HAML
 gem 'haml-rails'
 gem 'haml'
