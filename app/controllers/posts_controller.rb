@@ -15,11 +15,15 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    @project = Project.find(params[:project_id]) 
 
     respond_to do |format|
       if @post.save
         format.html { redirect_to project_path(@post.project_id, phase_id: @post.phase_id), notice: 'Post was successfully created.' }
         format.json { render action: 'show', status: :created, location: @post }
+          User.where(@project == @project && @project.subscriptions == true).each do |all|
+          Notifier.new_post(all, @project).deliver
+          end
       else
         format.html { render action: 'new' }
         format.json { render json: @post.errors, status: :unprocessable_entity }

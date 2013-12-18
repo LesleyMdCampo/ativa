@@ -1,5 +1,5 @@
 %p= "Hello #{@user.name},"
-%p= "You have been subscribed to the #{@project.name.capitalize} project at Ativa."
+%p= "The #{@project.name.capitalize} project at Ativa has added a new post."
 %p For more information, click the link below:
 = link_to @project.name.capitalize, project_url(@project)
 %br

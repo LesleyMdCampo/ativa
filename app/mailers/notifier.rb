@@ -10,25 +10,23 @@ class Notifier < ActionMailer::Base
   def subscription_confirmation(user, project)
     @user = user
     @project = project
-    @greeting = "Hi"
-
-  # Change the 'to:' section to your partner's name and email
-  mail( to: "#{user.name} <#{user.email}>",
-        subject: "Subscribed to #{project.name.capitalize} | Ativa")
-  
+    
+    mail( to: "#{user.name} <#{user.email}>", subject: "Subscribed to #{project.name.capitalize} | Ativa")
   end
 
-def unsubscribe(user, project)
+  def unsubscribe(user, project)
     @user = user
     @project = project
-    @greeting = "Hi"
-
-  # Change the 'to:' section to your partner's name and email
-  mail( to: "#{user.name} <#{user.email}>",
-        subject: "Unsubscribe to #{project.name.capitalize} | Ativa")
-  
+    
+    mail( to: "#{user.name} <#{user.email}>",
+          subject: "Unsubscribe to #{project.name.capitalize} | Ativa") 
   end
 
+  def new_post(user, project)
+    @user = user
+    @project = project
 
+    mail( to: "#{user.name} <#{user.email}>", subject: "New post from #{project.name.capitalize} | Ativa")
+  end
 
 end
